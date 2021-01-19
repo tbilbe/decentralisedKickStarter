@@ -1,0 +1,26 @@
+{
+  "name": "decentralisedkickstarter",
+  "version": "1.0.0",
+  "description": "a decentralised version of kickstarter!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbilbe/decentralisedKickStarter.git"
+  },
+  "author": "tbilbe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tbilbe/decentralisedKickStarter/issues"
+  },
+  "homepage": "https://github.com/tbilbe/decentralisedKickStarter#readme",
+  "dependencies": {
+    "fs-extra": "^9.0.1",
+    "ganache-cli": "^6.12.2",
+    "mocha": "^8.2.1",
+    "solc": "^0.8.0",
+    "web3": "^1.0.0-beta.55"
+  }
+}
