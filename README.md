@@ -7,4 +7,3 @@ kickstarter clone built for ethereum blockchain
 - mocha test suite
 - react (simple front end) 
 
-- this is a local edit pushed up!
