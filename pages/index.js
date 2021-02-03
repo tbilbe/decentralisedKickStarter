@@ -27,25 +27,17 @@ class CampaignIndex extends Component {
     return (
       <Layout>
         <div>
-          <link async rel="stylesheet"
-            href="//cdn.jsdelivr.net/npm/semantic-ui@2.0.0/dist/semantic.min.css"
-          />
+          
           <h3>Open Campaigns</h3>
-          <Grid>
-            <Grid.Row>
-              <Grid.Column width={11}>
-                {this.renderCampaigns()}
-              </Grid.Column>
-              <Grid.Column width={4}>
-                <Button
-                  content='Create Campaign'
-                  icon='add'
-                  primary
-                  labelPosition='left'
-                />
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
+          <Button
+            floated='right'
+            content='Create Campaign'
+            icon='add'
+            primary
+            labelPosition='left'
+          />
+          {this.renderCampaigns()}
+
         </div>
       </Layout>
     )
