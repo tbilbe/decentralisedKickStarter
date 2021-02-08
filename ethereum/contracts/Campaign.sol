@@ -5,8 +5,6 @@ pragma solidity ^0.4.17;
 contract CampaignFactory {
     address[] public deployedCampaigns;
 
-    
-
     function createCampaign(uint256 minimum) public {
         address factoryInvoker = msg.sender;
         address newCampaign = new Campaign(minimum, factoryInvoker);
@@ -46,9 +44,10 @@ contract Campaign {
 
     function contribute() public payable {
         require(msg.value >= minimumContribution);
+        if(!approvers[msg.sender]) {
         approvers[msg.sender] = true; // remember address doesnt get stored in map its a weird hash that equates to true, and defaults false if not there!
-
         approversCount++;
+        }
     }
 
     function createRequest(
@@ -87,5 +86,20 @@ contract Campaign {
         request.recipient.transfer(request.value);
 
         request.complete = true;
+    }
+
+    function getSummary() public view returns (
+        uint, uint, uint, uint, address
+    ) {
+        return (
+            minimumContribution,
+            this.balance,
+            requests.length,
+            approversCount,
+            manager
+        );
+    }
+    function getRequestCount() public view returns (uint) {
+        return requests.length;
     }
 }
