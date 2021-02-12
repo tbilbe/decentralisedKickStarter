@@ -15,7 +15,6 @@ export default class CampaignShow extends Component {
     // console.log('🚀 ~ file: showCampaign.js ~ line 9 ~ CampaignShow ~ getInitialProps ~ address', props.query.address)
     const campaign = Campaign(props.query.address);
     const campaignDetails = await campaign.methods.getSummary().call();
-    console.log(campaignDetails)
     return {
       address: props.query.address,
       minimumContribution: campaignDetails[0].toString(),
